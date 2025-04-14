@@ -1,10 +1,11 @@
 <div id="header">
     <h1>frii.bet</h1>
     <a>peli1</a>
-    <a>peli2</a>
+    <a href="/peli">peli2</a>
   </div>
   
   
+
   <style>
     #header {
       display: flex;
