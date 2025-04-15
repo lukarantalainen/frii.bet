@@ -1,27 +1,51 @@
-<div id="header">
-    <h1>frii.bet</h1>
-    <a>peli1</a>
-    <a href="/peli">peli2</a>
-  </div>
-  
-  
 
-  <style>
-    #header {
-      display: flex;
-      background-color: red;
-      align-items: center;
-      align-content: center;
-      justify-content: left
-    }
+
+<body>
+
+
+
+
   
-  
-    #header * {
-      margin: 0px;
-      padding: 0px;
-    }
-  
-    #header a {
-    margin-left: 2rem;
-    }
-  </style>
+<nav>
+  <div>
+    <a href="/">FRII.BET</a>
+  </div>
+
+  <div class="links">
+    <a href="/p2">link</a>
+  </div>
+
+</nav>
+
+</body>
+
+<style>
+  nav {
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  a {
+    color: white;
+  }
+
+
+  @font-face {
+    font-family: 'SpecialGothic';
+    src: url('/fonts/SpecialGothicExpandedOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+ body {
+  font-family: 'SpecialGothic'
+ }
+
+
+
+</style>
+
+<slot />
