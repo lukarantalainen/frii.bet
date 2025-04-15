@@ -1,5 +1,5 @@
-<body>
-<h1> hey
-    
+
+<h1>
+    this is the frontpage
 </h1>
-</body>
+
