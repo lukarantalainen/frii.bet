@@ -1,34 +1,44 @@
 <script lang="ts">
 import { page } from '$app/stores';
-
+import Icon from '@iconify/svelte';
 </script>
 
 
 
 <nav>
   <div>
-    <a href="/" class:selected={$page.url.pathname === '/'}>FRII.BET</a>
+    <a href="/" class:selected={$page.url.pathname === '/'}>
+      <Icon icon="mdi:gambling" style="margin-right: 0.5rem;width: 50px; height:50px;" />
+      FRII.BET
+    </a>
   </div>
 
   <div class="links">
-    <a href="/p2" class:selected={$page.url.pathname === '/p2'}>p2</a>
+    <a href="/p2" class:selected={$page.url.pathname === '/p2'}>
+      <Icon icon="proicons:graph" style="margin-right: 0.5rem;width: 50px; height:50px;" />
+      Crash
+    </a>
+    
   </div>
 
 </nav>
 
 
-
-
 <style>
   nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
     display: flex;
-    justify-content: left;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 2rem 1rem;
     background-color: #111;
     color: white;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 100px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    gap: 1rem;
   }
 
   nav a {
@@ -57,11 +67,13 @@ import { page } from '$app/stores';
   }
 
  :global(body) {
-  font-family: 'Montserrat'
+  font-family: 'Montserrat';
+  background-color: #363636;
+  margin-left: 200px;
+  padding: 2rem;
  }
-
 
 
 </style>
 
-<slot></slot>
+<slot/>

@@ -1,5 +1,3 @@
-
-<h1>
-    this is the frontpage
-</h1>
-
+<div id=games>
+    <a href="/p2">Crash</a>
+</div>
