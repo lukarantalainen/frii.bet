@@ -3,13 +3,15 @@ import { page } from '$app/stores';
 import Icon from '@iconify/svelte';
 </script>
 
-
+<!-- svelte-ignore css_unused_selector -->
+<title>
+  frii.bet
+</title>
 
 <nav>
-  <div>
+  <div class="logo">
     <a href="/" class:selected={$page.url.pathname === '/'}>
-      <Icon icon="mdi:gambling" style="margin-right: 0.5rem;width: 50px; height:50px;" />
-      FRII.BET
+      <img src="/friibet.png" alt=FRII.BET style="margin-right: 0.5rem; width: 4vw" />
     </a>
   </div>
 
@@ -37,16 +39,21 @@ import Icon from '@iconify/svelte';
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100px;
+    height: 99vh;
+    width: 3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 2rem;
     background-color: #111;
     color: white;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     gap: 1rem;
+    border-radius: 0px 50px 50px 0px;
+  }
+
+  .logo {
+    background-color: #ff4081;
   }
 
   nav a {
@@ -64,24 +71,23 @@ import Icon from '@iconify/svelte';
   a.selected {
     color: #ff4081; /* Highlight color */
     font-weight: bold;
-    border-bottom: 2px solid #ff4081;
   }
 
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  @media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   }
 
  :global(body) {
   font-family: 'Montserrat';
+  color: white;
   background-color: #363636;
   margin-left: 100px;
-  padding: 3rem;
+  padding-left: 3rem;
  }
-
-
+ 
 </style>
 
 <slot/>
