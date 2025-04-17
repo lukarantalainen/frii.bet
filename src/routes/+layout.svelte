@@ -21,8 +21,16 @@ import Icon from '@iconify/svelte';
     
   </div>
 
-</nav>
+  <div class="links">
+    <a href="/p3" class:selected={$page.url.pathname === '/p3'}>
+      <Icon icon="ic:twotone-casino" style="margin-right: 0.5rem;width: 50px; height:50px;" />
+      Dice
+    </a>
 
+
+  </div>
+
+</nav>
 
 <style>
   nav {
@@ -30,7 +38,7 @@ import Icon from '@iconify/svelte';
     top: 0;
     left: 0;
     height: 100vh;
-    width: 200px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,8 +77,8 @@ import Icon from '@iconify/svelte';
  :global(body) {
   font-family: 'Montserrat';
   background-color: #363636;
-  margin-left: 200px;
-  padding: 2rem;
+  margin-left: 100px;
+  padding: 3rem;
  }
 
 

@@ -41,6 +41,3 @@ You can preview the production build with `npm run preview`.
 git add .
 git commit -m "viesti"
 git push origin master
-
-npm run dev
-
