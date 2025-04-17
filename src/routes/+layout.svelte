@@ -45,11 +45,7 @@ import Icon from '@iconify/svelte';
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background-color: #111;
-    color: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    gap: 1rem;
-    border-radius: 0px 50px 50px 0px;
+    background-color: rgba(0, 255, 72, 0.738);
   }
 
   .logo {
@@ -57,14 +53,13 @@ import Icon from '@iconify/svelte';
   }
 
   nav a {
-    color: white;
     text-decoration: none;
     margin-left: 1rem;
-    transition: color 0.2s ease;
   }
 
   nav a:hover{
-    color: rgb(0, 162, 255)
+    color: rgb(0, 162, 255);
+    transition: color 0.2s ease;
   }
 
 
@@ -73,17 +68,13 @@ import Icon from '@iconify/svelte';
     font-weight: bold;
   }
 
-  @media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .links {
+    justify-content: right;
   }
 
  :global(body) {
   font-family: 'Montserrat';
-  color: white;
-  background-color: #363636;
+  color: black;
   margin-left: 100px;
   padding-left: 3rem;
  }
