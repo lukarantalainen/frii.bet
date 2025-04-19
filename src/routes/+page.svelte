@@ -13,11 +13,15 @@
     <div class=game2>
         <a href="/p3">Dice</a>
     </div>
-    
+ 
+    <div class=game4>
+        <a href="/p3">game3</a>
+    </div> 
 
+    <div class=game4>
+        <a href="/p3">game4</a>
+    </div>
 </div>
-
-
 
 <style>
 
@@ -42,7 +46,11 @@
         background-color: #D1D646;
         height: 100vh;
         border-radius: 10px;
+        justify-content: center;
+        display: flex;
         margin-left: 10px;
+        padding-top: 10px;
+        gap: 10px;
     }
 
     #games div {
@@ -50,7 +58,6 @@
         width: 200px;
         height: 150px;
         border-radius: 10px;
-        display: grid;
     }
 
     #games a {
