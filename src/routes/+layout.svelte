@@ -11,13 +11,13 @@ import Icon from '@iconify/svelte';
 <nav>
   <div class="logo">
     <a href="/" class:selected={$page.url.pathname === '/'}>
-      <img src="/friibet.png" alt=FRII.BET style="margin-right: 0.5rem; width: 4vw" />
+      <img src="/friibet.png" alt=FRII.BET style="width: 70px" />
     </a>
   </div>
 
   <div >
     <a href="/p2" class:selected={$page.url.pathname === '/p2'}>
-      <Icon icon="proicons:graph" style="margin-right: 0.5rem;width: 50px; height:50px;" />
+      <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
       <span class="nav-label">Crash</span>
     </a>
     
@@ -25,7 +25,7 @@ import Icon from '@iconify/svelte';
 
   <div >
     <a href="/p3" class:selected={$page.url.pathname === '/p3'}>
-      <Icon icon="ic:twotone-casino" style="margin-right: 0.5rem;width: 50px; height:50px;" />
+      <Icon icon="ic:twotone-casino" style="width: 70px; height:70px;" />
       <span class="nav-label">Dice</span>
     </a>
 
@@ -39,14 +39,14 @@ import Icon from '@iconify/svelte';
     position: fixed;
     top: 0;
     left: 0;
-    width: 4vw;
+    width: 60px;
     height: 100vh;
-    background-color: rgb(0, 162, 255);
+    background-color: #1fbfff;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     padding: 1em;
-    box-shadow: 5px 2px 2px #00aeff2a;
+    box-shadow: #EC058E 0px 0px 0px 4px;
   }
 
 
@@ -73,13 +73,12 @@ import Icon from '@iconify/svelte';
 
  :global(body) {
   font-family: 'Montserrat';
-  color: black;
+  color: #FFFBFC;
   position: relative;
   padding-left: 2em;
-  margin-left: 6vw;
+  margin-left: 60px;
  }
 
- 
 </style>
 
 <slot/>
