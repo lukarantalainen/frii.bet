@@ -4,9 +4,6 @@ import Icon from '@iconify/svelte';
 </script>
 
 <!-- svelte-ignore css_unused_selector -->
-<title>
-  frii.bet
-</title>
 
 <nav>
   <div class="logo">

@@ -1,3 +1,6 @@
+<title>
+    bet.frii.site | Casino, Roulette, Crash, Dice
+</title>
 
 <div id=frame>
 
@@ -20,13 +23,13 @@
     </div>
     </a>
 
-    <a href="/p3">
+    <a href="/p4">
     <div class=game3>
         game3
     </div> 
     </a>
 
-    <a href="/p3">
+    <a href="/p5">
     <div class=game4>
         game4
     </div>
@@ -34,6 +37,42 @@
 </div>
 
 </div>
+
+<div id=frame>
+
+    <div id=header>
+        <h1>
+            More games
+        </h1>
+    </div>
+    
+    <div id=games>
+        <a href="/p2">
+        <div class=game1> 
+           Link1
+        </div>
+        </a>
+    
+        <a href="/p3">
+        <div class=game2>
+            Link2
+        </div>
+        </a>
+    
+        <a href="/p4">
+        <div class=game3>
+            Link3
+        </div> 
+        </a>
+    
+        <a href="/p5">
+        <div class=game4>
+            Link4
+        </div>
+        </a>
+    </div>
+    
+    </div>
 
 <style>
 
@@ -47,12 +86,10 @@
         top: 0;
         margin-top: -15px;
         margin-bottom: -30px;
-        padding-left: 8px;
     }
 
-
     h1 {
-    color: #FFFFFF;
+    color: #ffffff;
     text-decoration: none;
     }
 
@@ -62,12 +99,14 @@
         justify-content: space-between;
         flex-direction: row;
         flex-wrap: nowrap;
+        max-width: 100%;
         padding-top: 10px;
+        overflow: clip;
         gap: 20px;
     }
 
     #games div {
-        background-image: linear-gradient(to top left, rgb(175, 255, 254), #ff4081, #1fbfff);
+    background-image: linear-gradient(to bottom right, rgb(123, 235, 255), rgb(0, 192, 250), rgb(0, 192, 250), #ff72c7);
         width: 20vw;
         height: 200px;
         border-radius: 5px;
@@ -86,6 +125,7 @@
     #games {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
     }
 
     #games div {

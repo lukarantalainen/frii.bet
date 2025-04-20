@@ -2,6 +2,10 @@
         import Icon from '@iconify/svelte';
 </script>
 
+<title>
+    Crash
+</title>
+
 <div class="game">
     <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
 </div>
