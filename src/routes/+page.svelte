@@ -1,3 +1,6 @@
+
+<div id=frame>
+
 <div id=header>
     <h1>
         Games
@@ -30,16 +33,20 @@
     </a>
 </div>
 
+</div>
+
 <style>
+
+    #frame {
+        outline: 2px dotted blue;
+        margin: 10px;
+    }
 
     #header {
         position: relative;
-        background-color: #1fbfff;
         top: 0;
-        z-index: 300;
-        border-radius: 10px;
-        margin-top: -10px;
-        margin-bottom: -10px;
+        margin-top: -15px;
+        margin-bottom: -30px;
         padding-left: 8px;
     }
 
@@ -51,20 +58,19 @@
 
     #games {
         position: relative;
-        background-color: #36c6ff;
-        height: 100vh;
-        border-radius: 10px;
-        justify-content: center;
         display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
         padding-top: 10px;
-        gap: 2vw;
+        gap: 20px;
     }
 
     #games div {
         background-image: linear-gradient(to top left, rgb(175, 255, 254), #ff4081, #1fbfff);
         width: 20vw;
-        height: 150px;
-        border-radius: 10px;
+        height: 200px;
+        border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -76,17 +82,17 @@
         font-size: 30px;
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 768px) {
     #games {
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     }
 
     #games div {
-        width: 35vw;
+        width:  35vw;
+        height: 150px;
     }
+
     }
 
 
