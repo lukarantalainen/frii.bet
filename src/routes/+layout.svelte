@@ -5,7 +5,7 @@ import Icon from '@iconify/svelte';
 
 <!-- svelte-ignore css_unused_selector -->
 
-<nav>
+<nav id=nav-left>
   <div class="logo">
     <a href="/" class:selected={$page.url.pathname === '/'}>
       <img src="/friibet.png" alt=FRII.BET style="width: 70px" />
@@ -31,8 +31,14 @@ import Icon from '@iconify/svelte';
 
 </nav>
 
+<nav id=nav-top>
+  <div>
+    hello
+  </div>
+</nav>
+
 <style>
-  nav {
+  #nav-left {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,8 +49,27 @@ import Icon from '@iconify/svelte';
     flex-direction: column;
     text-align: center;
     padding: 1em;
+    z-index: 2;
     box-shadow: #EC058E 0px 0px 0px 4px;
   }
+  
+  #nav-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 60px;
+    width: 100%;
+    height: 60px;
+    background-color: #1fbfff;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding: 1em;
+    z-index: 1;
+    box-shadow: #EC058E 0px 0px 0px 4px;
+  }
+
 
 
   nav a {
@@ -75,6 +100,8 @@ import Icon from '@iconify/svelte';
   position: relative;
   padding-left: 3em;
   margin-left: 60px;
+  margin-top: 60px;
+  padding-top: 3em;
  }
 
 </style>

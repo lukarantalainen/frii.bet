@@ -79,8 +79,7 @@
     #frame {
         outline: 2px dotted blue;
         margin: 10px;
-        margin-top: 10px;
-        margin-bottom: 30px;
+        margin: 10px 8vw 30px;
     }
 
     #header {
