@@ -79,13 +79,16 @@
     #frame {
         outline: 2px dotted blue;
         margin: 10px;
+        margin-top: 10px;
+        margin-bottom: 30px;
     }
 
     #header {
         position: relative;
         top: 0;
         margin-top: -15px;
-        margin-bottom: -30px;
+        margin-bottom: -1em;
+        outline: 2px dotted rgb(255, 0, 0);
     }
 
     h1 {
@@ -94,26 +97,28 @@
     }
 
     #games {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        width: 100%;
-        padding-top: 10px;
-        overflow: clip;
-        gap: 20px;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-top: 1rem;
+        outline: 2px dotted rgb(9, 255, 0);
     }
 
     #games div {
-    background-color: rgb(255, 98, 216);
-        width: 300px;
-        height: 200px;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    outline: 2px dotted rgb(234, 0, 255);
+    background-color: rgb(133, 133, 133);
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #games div:hover {
+        background-color: #adadad;
+        transition: background-color 0.4s;
+        transform: scale(1.05);
     }
 
     #games a {
@@ -122,20 +127,13 @@
         font-size: 30px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 990px) {
     #games {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
     justify-content: space-between;
     }
-
-    #games div {
-        width:  35vw;
-        height: 150px;
     }
-
-    }
-
-
 
 </style>
