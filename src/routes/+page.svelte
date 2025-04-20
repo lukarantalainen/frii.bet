@@ -98,16 +98,17 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        flex-wrap: nowrap;
-        max-width: 100%;
+        flex-wrap: wrap;
+
+        width: 100%;
         padding-top: 10px;
         overflow: clip;
         gap: 20px;
     }
 
     #games div {
-    background-image: linear-gradient(to bottom right, rgb(123, 235, 255), rgb(0, 192, 250), rgb(0, 192, 250), #ff72c7);
-        width: 20vw;
+    background-color: rgb(255, 98, 216);
+        width: 300px;
         height: 200px;
         border-radius: 5px;
         display: flex;
