@@ -74,8 +74,9 @@ import Icon from '@iconify/svelte';
  :global(body) {
   font-family: 'Montserrat';
   color: #FFFBFC;
+  background-color: #36c6ff;
   position: relative;
-  padding-left: 2em;
+  padding-left: 3em;
   margin-left: 60px;
  }
 

@@ -1,5 +1,9 @@
+<script>
+        import Icon from '@iconify/svelte';
+</script>
+
 <div class="game">
-    <h1>crash game</h1>
+    <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
 </div>
 
 
@@ -8,17 +12,15 @@
 <style>
 
 
+
 .game {
-    width: 50vw;
-    height: 50vh;
+    height: 80vh;
+    margin: 10vh 0 0 30vw;
     background-color: black;
-    position: relative;
-    top: 20rem;
-    left: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    color: white;
-}
 
 </style>
