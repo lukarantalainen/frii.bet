@@ -2,6 +2,7 @@
     bet.frii.site | Casino, Roulette, Crash, Dice
 </title>
 
+<div id=container>
 <div id=frame>
 
 <div id=header>
@@ -74,7 +75,13 @@
     
     </div>
 
+</div>
 <style>
+
+    #container {
+        margin: 60px 0 0 60px;
+        padding: 1em 0 0 1em;
+    }
 
     #frame {
         margin: 10px;
@@ -84,8 +91,6 @@
     #header {
         position: relative;
         top: 0;
-        margin-top: -15px;
-        margin-bottom: -1em;
     }
 
     h1 {
@@ -104,8 +109,6 @@
     background-color: rgb(133, 133, 133);
     height: 200px;
     border-radius: 8px;
-    display: flex;
-    flex: wrap;
     justify-content: center;
     align-items: center;
     }

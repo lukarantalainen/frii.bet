@@ -3,8 +3,6 @@ import { page } from '$app/stores';
 import Icon from '@iconify/svelte';
 </script>
 
-<!-- svelte-ignore css_unused_selector -->
-
 <nav id=nav-left>
   <div class="logo">
     <a href="/" class:selected={$page.url.pathname === '/'}>
@@ -17,7 +15,6 @@ import Icon from '@iconify/svelte';
       <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
       <span class="nav-label">Crash</span>
     </a>
-    
   </div>
 
   <div >
@@ -25,15 +22,14 @@ import Icon from '@iconify/svelte';
       <Icon icon="ic:twotone-casino" style="width: 70px; height:70px;" />
       <span class="nav-label">Dice</span>
     </a>
-
-
   </div>
-
 </nav>
 
 <nav id=nav-top>
   <div>
-    hello
+    <button>
+      Sign in
+    </button>
   </div>
 </nav>
 
@@ -50,7 +46,6 @@ import Icon from '@iconify/svelte';
     text-align: center;
     padding: 1em;
     z-index: 2;
-    box-shadow: #EC058E 0px 0px 0px 4px;
   }
   
   #nav-top {
@@ -58,19 +53,12 @@ import Icon from '@iconify/svelte';
     top: 0;
     left: 0;
     margin-left: 60px;
-    width: 100%;
+    width: 100vw;
     height: 60px;
     background-color: #1fbfff;
-    display: flex;
-    flex-direction: row;
     text-align: center;
-    justify-content: center;
     padding: 1em;
-    z-index: 1;
-    box-shadow: #EC058E 0px 0px 0px 4px;
   }
-
-
 
   nav a {
     text-decoration: none;
@@ -88,9 +76,7 @@ import Icon from '@iconify/svelte';
   }
   
   .logo {
-    color: white;
-    margin-bottom: 1em;
-    margin-top: 1em;
+    margin: 1em 0em;
   }
 
  :global(body) {
@@ -98,10 +84,6 @@ import Icon from '@iconify/svelte';
   color: #FFFBFC;
   background-color: #36c6ff;
   position: relative;
-  padding-left: 3em;
-  margin-left: 60px;
-  margin-top: 60px;
-  padding-top: 3em;
  }
 
 </style>
