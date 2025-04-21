@@ -17,7 +17,7 @@
     </div>
     </a>
 
-    <a href="/p2">
+    <a href="/Dice">
     <div class=game2>
         Dice
     </div>
