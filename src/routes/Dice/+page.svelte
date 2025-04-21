@@ -1,20 +1,16 @@
-<script>
-        import Icon from '@iconify/svelte';
+<script lang="ts">
+    import Icon from '@iconify/svelte';
 </script>
-
-<title>
-    Crash
-</title>
-
+<div id="page">
+        
 <div class="game">
-    <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
+    <Icon icon="ic:twotone-casino" style="width: 70px; height:70px;" />
+</div>
+
 </div>
 
 
-
-
 <style>
-
 
 
 .game {

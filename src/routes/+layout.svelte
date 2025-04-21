@@ -13,7 +13,7 @@ import Icon from '@iconify/svelte';
   </div>
 
   <div >
-    <a href="/p2" class:selected={$page.url.pathname === '/p2'}>
+    <a href="/Crash" class:selected={$page.url.pathname === '/Crash'}>
       <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
       <span class="nav-label">Crash</span>
     </a>
@@ -21,7 +21,7 @@ import Icon from '@iconify/svelte';
   </div>
 
   <div >
-    <a href="/p3" class:selected={$page.url.pathname === '/p3'}>
+    <a href="/Dice" class:selected={$page.url.pathname === '/Dice'}>
       <Icon icon="ic:twotone-casino" style="width: 70px; height:70px;" />
       <span class="nav-label">Dice</span>
     </a>

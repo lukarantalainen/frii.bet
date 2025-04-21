@@ -11,27 +11,27 @@
 </div>
 
 <div id=games>
-    <a href="/p2">
+    <a href="/Crash">
     <div class=game1> 
        Crash
     </div>
     </a>
 
-    <a href="/p3">
+    <a href="/p2">
     <div class=game2>
         Dice
     </div>
     </a>
 
-    <a href="/p4">
+    <a href="/p3">
     <div class=game3>
-        game3
+        Link 3
     </div> 
     </a>
 
-    <a href="/p5">
+    <a href="/p4">
     <div class=game4>
-        game4
+        Link 4
     </div>
     </a>
 </div>
@@ -47,25 +47,25 @@
     </div>
     
     <div id=games>
-        <a href="/p2">
+        <a href="/p1">
         <div class=game1> 
            Link1
         </div>
         </a>
     
-        <a href="/p3">
+        <a href="/p2">
         <div class=game2>
             Link2
         </div>
         </a>
     
-        <a href="/p4">
+        <a href="/p3">
         <div class=game3>
             Link3
         </div> 
         </a>
     
-        <a href="/p5">
+        <a href="/p4">
         <div class=game4>
             Link4
         </div>
@@ -77,7 +77,6 @@
 <style>
 
     #frame {
-        outline: 2px dotted blue;
         margin: 10px;
         margin: 10px 8vw 30px;
     }
@@ -87,7 +86,6 @@
         top: 0;
         margin-top: -15px;
         margin-bottom: -1em;
-        outline: 2px dotted rgb(255, 0, 0);
     }
 
     h1 {
@@ -98,13 +96,11 @@
     #games {
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         margin-top: 1rem;
-        outline: 2px dotted rgb(9, 255, 0);
     }
 
     #games div {
-    outline: 2px dotted rgb(234, 0, 255);
     background-color: rgb(133, 133, 133);
     height: 200px;
     border-radius: 8px;
@@ -116,7 +112,7 @@
 
     #games div:hover {
         background-color: #adadad;
-        transition: background-color 0.4s;
+        transition: background-color;
         transform: scale(1.05);
     }
 
@@ -130,7 +126,6 @@
     #games {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    flex-grow: 1;
     justify-content: space-between;
     }
     }

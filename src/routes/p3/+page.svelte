@@ -1,26 +1,3 @@
-<script lang="ts">
-    import Icon from '@iconify/svelte';
-</script>
-<div id="page">
-        
-<div class="game">
-    <Icon icon="ic:twotone-casino" style="width: 70px; height:70px;" />
-</div>
-
-</div>
-
-
-<style>
-
-
-.game {
-    height: 80vh;
-    margin: 10vh 0 0 30vw;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-</style>
+<div>
+<!-- svelte-ignore a11y_missing_attribute -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d549.2097825055241!2d25.96736738821875!3d62.418679933792696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4685093b00066ae5%3A0x54dd9ab7244466d3!2sLuhtarannankatu%2014%2C%2041340%20Laukaa!5e0!3m2!1sfi!2sfi!4v1745177078689!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
