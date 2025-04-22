@@ -109,6 +109,7 @@
     background-color: rgb(133, 133, 133);
     height: 200px;
     border-radius: 8px;
+    display: flex;
     justify-content: center;
     align-items: center;
     }
