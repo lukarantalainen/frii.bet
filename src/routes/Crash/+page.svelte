@@ -7,7 +7,6 @@
 
         // muuttujat, jotka päivittävät HTML aina kun niitä muutetaan 
         // https://svelte.dev/docs/svelte/$state
-        
         let currentValue: number = $state(1);
         let isCrashed: boolean = $state(false)
         let nextGameStartTime: Date = $state(new Date());

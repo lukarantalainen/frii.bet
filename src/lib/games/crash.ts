@@ -10,10 +10,6 @@ interface EndCallback {
     (maxMultiplier: number, nextGame: Date): void
 }
 
-function sleep(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export class Crash {
     onStart: StartCallback;
     onProgress: ProgressCallback;
@@ -41,6 +37,7 @@ export class Crash {
         this.crashed = false;
         this.currentMultiplier = 1.0;
         this.willCrashAt = Math.random() * 4
+        this.onStart();
 
         this.intervalId = setInterval(() => { this.gameLoop() }, 500)
 
