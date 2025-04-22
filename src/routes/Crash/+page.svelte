@@ -1,8 +1,13 @@
 <script lang="ts">
         import Icon from '@iconify/svelte';
-        import { Crash } from '$lib/games/crash';
-    import { onDestroy, onMount } from 'svelte';
 
+        import { Crash } from '$lib/games/crash';
+        import { onDestroy, onMount } from 'svelte';
+
+
+        // muuttujat, jotka päivittävät HTML aina kun niitä muutetaan 
+        // https://svelte.dev/docs/svelte/$state
+        
         let currentValue: number = $state(1);
         let isCrashed: boolean = $state(false)
         let nextGameStartTime: Date = $state(new Date());
