@@ -39,25 +39,28 @@ import Icon from '@iconify/svelte';
     top: 0;
     left: 0;
     width: 60px;
-    height: 100vh;
+    height: 100%;
     background-color: #1fbfff;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 1em;
+    padding: 1rem;
     z-index: 2;
   }
   
   #nav-top {
     position: fixed;
     top: 0;
-    left: 0;
-    margin-left: 60px;
+    margin-left: 1rem;
     width: 100vw;
     height: 60px;
+    display: flex;
+    justify-content: space-between;
     background-color: #1fbfff;
     text-align: center;
-    padding: 1em;
+    align-items: center;
+    padding: 1rem;
   }
 
   nav a {
@@ -84,6 +87,8 @@ import Icon from '@iconify/svelte';
   color: #FFFBFC;
   background-color: #36c6ff;
   position: relative;
+  padding-left: 60px;
+  padding-top: 60px;
  }
 
 </style>

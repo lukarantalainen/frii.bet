@@ -21,7 +21,7 @@
 
         // suorittaa itsensä joka 0.5s kun peli on käynnissä
         function crashProgressHandler(currentMultiplier: number) {
-            console.log("Tämänhetkienn numero: " + currentMultiplier)
+            console.log("Tämänhetkinen numero: " + currentMultiplier)
             
 
             // Pyöristetään lähimpään 2, koska 'floating point calculations' on aika outoja
@@ -65,19 +65,16 @@
         
 </script>
 
-<title>
-    Crash
-</title>
-
 
 <div class="game">
+    <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
     <h1>{currentValue}x</h1>
     
     {#if isCrashed} 
         <h1>oops! crashed at {currentValue}</h1>
         <p>Next game will start: {nextGameStartTime}</p>
     {/if}
-    <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
+   
 </div>
 
 <style>

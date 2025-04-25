@@ -14,8 +14,7 @@
 
 
 .game {
-    height: 80vh;
-    margin: 10vh 0 0 30vw;
+    height: 100vh;
     background-color: black;
     display: flex;
     justify-content: center;

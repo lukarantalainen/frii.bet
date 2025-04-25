@@ -45,7 +45,7 @@ export class Crash {
     }
 
     private gameLoop() {
-        this.currentMultiplier += 0.01;
+        this.currentMultiplier += 0.06;
         if (this.currentMultiplier > this.willCrashAt) {
             this.crashed = true;
             this.nextDate.setSeconds(new Date().getSeconds() + 8) // uusi peli alkaa 8s päästä

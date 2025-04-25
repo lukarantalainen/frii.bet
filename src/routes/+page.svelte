@@ -79,13 +79,11 @@
 <style>
 
     #container {
-        margin: 60px 0 0 60px;
-        padding: 1em 0 0 1em;
+        padding-top: 2em;
     }
 
     #frame {
-        margin: 10px;
-        margin: 10px 8vw 30px;
+        margin: 0 8vw 30px;
     }
 
     #header {
