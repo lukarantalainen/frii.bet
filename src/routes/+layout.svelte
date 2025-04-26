@@ -40,7 +40,7 @@ import Icon from '@iconify/svelte';
     left: 0;
     width: 60px;
     height: 100%;
-    background-color: #1fbfff;
+    background-color: #42baff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,15 +52,16 @@ import Icon from '@iconify/svelte';
   #nav-top {
     position: fixed;
     top: 0;
-    margin-left: 1rem;
+    margin-left: 2rem;
     width: 100vw;
     height: 60px;
     display: flex;
     justify-content: space-between;
-    background-color: #1fbfff;
+    background-color: #42baff;
     text-align: center;
     align-items: center;
     padding: 1rem;
+    z-index: 3;
   }
 
   nav a {
@@ -89,6 +90,7 @@ import Icon from '@iconify/svelte';
   position: relative;
   padding-left: 60px;
   padding-top: 60px;
+  margin: 0;
  }
 
 </style>

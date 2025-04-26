@@ -86,11 +86,6 @@
         margin: 0 8vw 30px;
     }
 
-    #header {
-        position: relative;
-        top: 0;
-    }
-
     h1 {
     color: #ffffff;
     text-decoration: none;
