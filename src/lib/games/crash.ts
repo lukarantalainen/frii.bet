@@ -39,22 +39,26 @@ export class Crash {
         this.willCrashAt = Math.random() * 4
         this.onStart();
 
-        this.intervalId = setInterval(() => { this.gameLoop() }, 500)
+        this.intervalId = setInterval(() => { this.gameLoop() }, 300)
 
         this.gameLoop()
     }
 
     private gameLoop() {
-        this.currentMultiplier += 0.06;
+        this.currentMultiplier += Math.random() / 20;
         if (this.currentMultiplier > this.willCrashAt) {
             this.crashed = true;
             this.nextDate.setSeconds(new Date().getSeconds() + 8) // uusi peli alkaa 8s päästä
             this.onEnd(this.willCrashAt, this.nextDate);
-
+            
             setTimeout(()=>{this.start()}, 8000);
 
             clearInterval(this.intervalId)
             return
+        }
+
+        if (this.currentMultiplier > 1.5) {
+            this.currentMultiplier += Math.random() / 10;
         }
 
         this.onProgress(this.currentMultiplier);
