@@ -1,1 +1,8 @@
-<h1>hey</h1>
+<script lang=ts>
+    import { diceRoller } from '$lib/games/dice';
+
+
+
+
+
+</script>

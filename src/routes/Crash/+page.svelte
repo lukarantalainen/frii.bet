@@ -70,13 +70,12 @@
 </script>
 
 
-<div class="game">
-    <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
-    <h1 id=value>{currentValue}x</h1>
-    
+<div class="game">    
     {#if isCrashed} 
-        <h1>oops! crashed at {crashedAt}</h1>
+        <h1>oops! crashed at {crashedAt}x</h1>
         <p>Next game will start: {nextGameStartTime}</p>
+    {:else}
+        <h1 id=value>{currentValue}x</h1>
     {/if}
    
 </div>
@@ -84,11 +83,17 @@
 <style>
 
 .game {
+    display: flex; 
+    flex-direction: column;
     height: 80vh;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.game {
+    margin-bottom: 10px;
 }
 
 </style>
