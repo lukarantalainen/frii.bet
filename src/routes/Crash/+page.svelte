@@ -8,6 +8,8 @@
         // muuttujat, jotka päivittävät HTML aina kun niitä muutetaan 
         // https://svelte.dev/docs/svelte/$state
         let currentValue: number = $state(1);
+        let crashedAt: number = $state(1);
+
         let isCrashed: boolean = $state(false)
         let nextGameStartTime: Date = $state(new Date());
 
@@ -35,7 +37,8 @@
             console.log("Päättönumero: " + maxMultiplier)
             console.log("Seuraava peli: " + nextGame)
 
-            currentValue = 1.0;
+            crashedAt = Math.round(maxMultiplier*100)/100;
+            currentValue = currentMultiplier;
             isCrashed = true;
             nextGameStartTime = nextGame
 
@@ -72,7 +75,7 @@
     <h1 id=value>{currentValue}x</h1>
     
     {#if isCrashed} 
-        <h1>oops! crashed at {currentValue}</h1>
+        <h1>oops! crashed at {crashedAt}</h1>
         <p>Next game will start: {nextGameStartTime}</p>
     {/if}
    
