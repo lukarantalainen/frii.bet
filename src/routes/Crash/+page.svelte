@@ -38,7 +38,7 @@
             console.log("Seuraava peli: " + nextGame)
 
             crashedAt = Math.round(maxMultiplier*100)/100;
-            currentValue = currentMultiplier;
+            currentValue = 1;
             isCrashed = true;
             nextGameStartTime = nextGame
 
