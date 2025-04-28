@@ -1,3 +1,3 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-export const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>') // todo hanki myöhmemin
+export const supabase: SupabaseClient = createClient('https://<project>.supabase.co', '<your-anon-key>') // todo hanki myöhmemin
