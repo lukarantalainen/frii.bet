@@ -86,6 +86,9 @@
     display: flex; 
     flex-direction: column;
     height: 80vh;
+    width: 100vw;
+    margin-left: 100px;
+    margin-top: 100px;
     background-color: black;
     display: flex;
     justify-content: center;
