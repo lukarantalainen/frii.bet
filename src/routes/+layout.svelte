@@ -4,11 +4,7 @@ import Icon from '@iconify/svelte';
 </script>
 
 <nav id=nav-left>
-  <div class="logo">
-    <a href="/" class:selected={$page.url.pathname === '/'}>
-      <img src="/friibet.png" alt=FRII.BET style="width: 70px" />
-    </a>
-  </div>
+
 
   <div >
     <a href="/Crash" class:selected={$page.url.pathname === '/Crash'}>
@@ -26,11 +22,16 @@ import Icon from '@iconify/svelte';
 </nav>
 
 <nav id=nav-top>
-  <div>
-    <button>
-      Sign in
-    </button>
+  <div class="logo">
+    <a href="/" class:selected={$page.url.pathname === '/'}>
+      <h1>bet.frii.site</h1>
+    </a>
   </div>
+  
+  <div>
+      <a href="signin">Sign in</a>
+  </div>
+  
 </nav>
 
 <style>
@@ -46,17 +47,17 @@ import Icon from '@iconify/svelte';
     align-items: center;
     text-align: center;
     padding: 1rem;
-    z-index: 2;
+    margin-top: 80px;
   }
   
   #nav-top {
     position: fixed;
     top: 0;
-    margin-left: 2rem;
     width: 100vw;
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 2rem;
     background-color: #42baff;
     text-align: center;
     align-items: center;
@@ -81,6 +82,7 @@ import Icon from '@iconify/svelte';
   
   .logo {
     margin: 1em 0em;
+    font-size: large;
   }
 
  :global(body) {
@@ -88,8 +90,6 @@ import Icon from '@iconify/svelte';
   color: #FFFBFC;
   background-color: #36c6ff;
   position: relative;
-  padding-left: 60px;
-  padding-top: 60px;
   margin: 0;
  }
 
