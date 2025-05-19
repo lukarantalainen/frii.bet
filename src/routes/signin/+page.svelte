@@ -1,15 +1,32 @@
 <script lang="ts">
+    import { browser } from '$app/environment';
+    import type { PageProps } from './$types';
     import Cookies from "js-cookie";
 
     let email = $state("");
     let password = $state("");
 
-
     let isLogin = $state(false);
 
+    let { data }: PageProps = $props();
+
+    if(browser) {
+        if(data.token) {
+            var t = new Date();
+             t.setSeconds(t.getSeconds() + 3600);
+            alert("Succesfully signed in");
+            Cookies.set("token", data.token, { expires: t });
+        }
+    }
+    
+
+    $effect(() => {
+        console.log(data);
+    });
+    
     function action() {
         var t = new Date();
-        t.setSeconds(t.getSeconds() + 10);
+        t.setSeconds(t.getSeconds() + 5);
 
         Cookies.set("email",email, { expires:t });
         Cookies.set("password",password, { expires:t });

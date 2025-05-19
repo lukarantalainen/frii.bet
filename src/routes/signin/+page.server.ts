@@ -12,12 +12,19 @@ export const load: PageServerLoad = async ({ cookies }) => {
   } else {
     let auth: Auth = new Auth();
     if(login) {
-      auth.signIn(email,password).then(obj => {
-        console.log(obj)
-      })
+      return {
+        token: (await auth.signIn(email, password)).data.session.access_token
+      }
     } else {
       auth.signUp(email,password).then(obj => {
-        console.log(obj)
+        if(obj.error) {
+          return {
+            error: obj.error
+          }
+        }
+        return {
+          data: obj.data
+        }
       })
     }
 

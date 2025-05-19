@@ -17,64 +17,9 @@
        Crash
     </div>
     </a>
-
-    <a href="/Dice">
-    <div class=game2>
-        Dice
-    </div>
-    </a>
-
-    <a href="/p3">
-    <div class=game3>
-        Link 3
-    </div> 
-    </a>
-
-    <a href="/p4">
-    <div class=game4>
-        Link 4
-    </div>
-    </a>
 </div>
 
 </div>
-
-<div id=frame>
-
-    <div id=header>
-        <h1>
-            More games
-        </h1>
-    </div>
-    
-    <div id=games>
-        <a href="/p1">
-        <div class=game1> 
-           Link1
-        </div>
-        </a>
-    
-        <a href="/p2">
-        <div class=game2>
-            Link2
-        </div>
-        </a>
-    
-        <a href="/p3">
-        <div class=game3>
-            Link3
-        </div> 
-        </a>
-    
-        <a href="/p4">
-        <div class=game4>
-            Link4
-        </div>
-        </a>
-    </div>
-    
-    </div>
-
 </div>
 <style>
 
