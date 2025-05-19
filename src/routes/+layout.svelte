@@ -1,15 +1,19 @@
 <script lang="ts">
-import { page } from '$app/stores';
-import Icon from '@iconify/svelte';
-import { balance } from '$lib/store';
-  import { browser } from '$app/environment';
+  import { page } from "$app/stores";
+  import Icon from "@iconify/svelte";
+  import { balance } from "$lib/store";
 
-</script>
+  let unconfirmedBal = $state(0);
+
+  $effect(() => {
+    unconfirmedBal = Math.round($balance*100)/100;
+  })
+</script> 
 
 <div id="margin"></div>
-<nav id=nav-left>
-  <div >
-    <a href="/Crash" class:selected={$page.url.pathname === '/Crash'}>
+<nav id="nav-left">
+  <div>
+    <a href="/Crash" class:selected={$page.url.pathname === "/Crash"}>
       <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
       <span class="nav-label">Crash</span>
     </a>
@@ -23,16 +27,21 @@ import { balance } from '$lib/store';
   </div>
 </nav>
 
-<nav id=nav-top>
+<nav id="nav-top">
   <div class="logo">
-    <a href="/" class:selected={$page.url.pathname === '/'}>
+    <a href="/" class:selected={$page.url.pathname === "/"}>
       <h1>bet.frii.site</h1>
     </a>
   </div>
-  
+  <div class="selector">
+    <p>Balance $: <input type=number bind:value={unconfirmedBal} /></p>
+    <button onclick={_ => $balance = unconfirmedBal}>Set</button>
+  </div>
 
   
 </nav>
+
+<slot />
 
 <style>
   #nav-left {
@@ -49,7 +58,7 @@ import { balance } from '$lib/store';
     padding: 1rem;
     margin-top: 80px;
   }
-  
+
   #nav-top {
     position: fixed;
     top: 0;
@@ -70,7 +79,7 @@ import { balance } from '$lib/store';
     color: white;
   }
 
-  nav a:hover{
+  nav a:hover {
     color: #ff4081;
     transition: color 0.2s ease;
   }
@@ -79,20 +88,22 @@ import { balance } from '$lib/store';
     color: #ff4081;
     font-weight: bold;
   }
-  
+
   .logo {
     margin: 1em 0em;
     font-size: large;
   }
 
- :global(body) {
-  font-family: 'Montserrat';
-  color: #FFFBFC;
-  background-color: #36c6ff;
-  position: relative;
-  margin: 0;
- }
+  :global(body) {
+    font-family: "Montserrat";
+    color: #fffbfc;
+    background-color: #36c6ff;
+    position: relative;
+    margin: 0;
+  }
 
+  .selector {
+    display: flex;
+    align-items: center;
+  }
 </style>
-
-<slot/>

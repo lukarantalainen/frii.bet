@@ -10,6 +10,27 @@ interface EndCallback {
     (maxMultiplier: number, nextGame: Date): void
 }
 
+function decideCrash() {
+    let r = Math.random();
+    
+    if (r < 0.4) {
+        return +(Math.random() * (1.24 - 1.00) + 1.00).toFixed(2);
+    }
+    if (r < 0.65) {
+        return +(Math.random() * (1.7 - 1.24) + 1.15).toFixed(2);
+    }
+    if (r < 0.9) {
+        return +(Math.random() * (3.2 - 1.7) + 1.4).toFixed(2);
+    }
+    if (r < 0.985) {
+        return +(Math.random() * (12 - 3.2) + 1.9).toFixed(2);
+    }
+    if (r < 0.9995) {
+        return +(Math.random() * (100 - 12) + 5).toFixed(2);
+    }
+    return +(Math.random() * (600 - 50) + 50).toFixed(2);
+}
+
 export class Crash {
     onStart: StartCallback;
     onProgress: ProgressCallback;
@@ -17,10 +38,11 @@ export class Crash {
 
     crashed: boolean = false;
     currentMultiplier: number = 1.0;
-    willCrashAt: number = Math.random() * 4
+    willCrashAt: number = decideCrash();
     nextDate: Date = new Date();
     inProgress: boolean = false;
     betAmount: number = 0;
+    stopped: boolean = false;
 
     intervalId: number = 0;
 
@@ -32,13 +54,14 @@ export class Crash {
 
     stop() {
         this.crashed = true;
+        this.stopped = true;
         clearInterval(this.intervalId);
     }
 
     start() {
         this.crashed = false;
         this.currentMultiplier = 1.0;
-        this.willCrashAt = Math.random() * 4
+        this.willCrashAt = decideCrash();
         this.onStart();
         this.inProgress = true;
 
@@ -54,16 +77,21 @@ export class Crash {
         return !this.inProgress  
     }
 
-    cashOut(): boolean | number {
+    cashOut(): false | number {
         if(!this.inProgress) {
             return false;
         } else {
-            return this.betAmount * this.currentMultiplier;
+            let profit = this.betAmount * this.currentMultiplier;
+            this.betAmount = 0;
+            return profit
         }
     }
 
     private gameLoop() {
-        this.currentMultiplier += Math.random() / 20;
+        if(this.stopped) {
+            return
+        }
+        this.currentMultiplier = this.currentMultiplier * 1.01;
         if (this.currentMultiplier > this.willCrashAt) {
             this.crashed = true;
             this.inProgress = false;

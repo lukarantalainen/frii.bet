@@ -1,0 +1,27 @@
+<script lang="ts">
+    let { value } = $props();
+    let innerDiv: HTMLDivElement;
+
+    $effect(() => {
+        innerDiv.style.width = `${(value / 8000) * 100}%`
+    });
+
+</script>
+
+<div class="outer">
+    <div class="line" bind:this={innerDiv}>
+
+    </div>
+</div>
+
+<style>
+    .outer {
+        width: 20vw;
+    }
+    .line {
+        background-color: rgb(0,123,255);
+        height: 1em;
+        border-radius: 12px;
+        width: 0%;
+    }
+</style>
