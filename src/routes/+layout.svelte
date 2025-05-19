@@ -14,6 +14,13 @@ import { balance } from '$lib/store';
       <span class="nav-label">Crash</span>
     </a>
   </div>
+
+    <div >
+    <a href="/Dice" class:selected={$page.url.pathname === '/Dice'}>
+      <Icon icon="material-symbols:casino" style="width: 70px; height:70px;" />
+      <span class="nav-label">Dice</span>
+    </a>
+  </div>
 </nav>
 
 <nav id=nav-top>
@@ -23,10 +30,6 @@ import { balance } from '$lib/store';
     </a>
   </div>
   
-
-    {#if browser}
-      <p>Balance $: <input type="number" bind:value={$balance}> </p>
-    {/if}
 
   
 </nav>

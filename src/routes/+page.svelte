@@ -17,15 +17,21 @@
        Crash
     </div>
     </a>
+
+    <a href="/Dice">
+    <div class=game2>
+        Dice
+    </div>
+    </a>
 </div>
 
 </div>
+
 </div>
 <style>
 
     #container {
-        padding-top: 80px;
-        margin-left: 60px;
+        margin-top: 100px;
     }
 
     #frame {
