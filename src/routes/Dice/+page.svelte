@@ -1,5 +1,5 @@
 <script lang="ts">
-  let balance = 1000;
+import { balance } from "$lib/store";
   let betAmount = 0;
   let selectedNumber = 1;
   let diceRoll = 1;
@@ -7,7 +7,7 @@
   let rolling = false;
 
   function rollDice() {
-    if (rolling || betAmount <= 0 || betAmount > balance) {
+    if (rolling || betAmount <= 0 || betAmount > $balance) {
       message = "Invalid bet.";
       return;
     }
@@ -20,20 +20,16 @@
 
       if (diceRoll === selectedNumber) {
         const winnings = betAmount * 5;
-        balance += winnings;
+        $balance = $balance + winnings;
         message = `🎉 You rolled a ${diceRoll} and won ${winnings}€!`;
       } else {
-        balance -= betAmount;
+        $balance = $balance - betAmount;
         message = `❌ You rolled a ${diceRoll}. You lost ${betAmount}€.`;
       }
 
       rolling = false;
     }, 500);
   }
-
-    function resetBalance() {
-    balance = 1000;
-    }
 </script>
 
 <style>
@@ -93,9 +89,6 @@
 
 <div class="container">
   <h2>🎲 Dice Game</h2>
-  <div class="dice">{diceRoll}</div>
-  <p>💰 Balance: {balance}€</p>
-
   <div class="controls">
     <div>
       <label for="bet">Bet (€)</label><br />
@@ -104,7 +97,7 @@
         type="number"
         bind:value={betAmount}
         min="1"
-        max={balance}
+        max={$balance}
       />
     </div>
 
@@ -120,9 +113,5 @@
 
   <button onclick={rollDice} disabled={rolling}>Place Bet</button>
 
-
-
   <p>{message}</p><br><br>
-
-    <button onclick={resetBalance}>Reset balance</button>
 </div>

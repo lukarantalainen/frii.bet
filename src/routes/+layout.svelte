@@ -34,7 +34,7 @@
     </a>
   </div>
   <div class="selector">
-    <p>Balance $: <input type=number bind:value={unconfirmedBal} /></p>
+    <p>Balance: €<input type=number bind:value={unconfirmedBal} /></p>
     <button onclick={_ => $balance = unconfirmedBal}>Set</button>
   </div>
 

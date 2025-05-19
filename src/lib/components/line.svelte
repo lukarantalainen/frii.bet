@@ -17,11 +17,13 @@
 <style>
     .outer {
         width: 20vw;
+        margin: 10%;
     }
     .line {
-        background-color: rgb(0,123,255);
+        background-color: white;
         height: 1em;
-        border-radius: 12px;
+        border-radius: 4px;
         width: 0%;
+        
     }
 </style>

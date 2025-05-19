@@ -10,6 +10,7 @@
     import Icon from "@iconify/svelte";
 
     let hasBet: boolean = $state(false);
+    let gameOngoing: boolean = $state(false);
     // muuttujat, jotka päivittävät HTML aina kun niitä muutetaan
     // https://svelte.dev/docs/svelte/$state
     let currentValue: number = $state(1);
@@ -35,7 +36,7 @@
     // suorittaa kun peli alkaa
     function crashStartHandler() {
         console.log("Game started!");
-
+        gameOngoing = true;
         isCrashed = false;
     }
 
@@ -60,7 +61,8 @@
         nextGameStartTime = nextGame;
         hasBet = false;
         hasCashout = false;
-        $history = [crashedAt, ...$history.slice(0, 5)];
+        $history = [crashedAt, ...$history.slice(0, 3)];
+        gameOngoing = false;
         startInterval();
     }
 
@@ -92,42 +94,74 @@
 <div id="container">
     <div class="input-column">
         <div id="message-box">
+            {#if gameOngoing} 
+                <p>Please wait for this round to finish</p>
+            {:else}
+                <p>Place your bets now!</p>
+            {/if}
             <Line value={msUntilNextGame} />
+        </div>  
+        <div class="lower">
+            <div class="group">
+                <Icon
+                    icon="ic:baseline-euro"
+                    class="euro-icon"
+                    style="position: absolute; left: 1rem; width: 1.25rem; height: 1.25rem; color: #ff4081; pointer-events: none;"
+                />
+                <input
+                    class="input"
+                    type="number"
+                    placeholder="Your bet"
+                    max={$balance}
+                    bind:value={amount}
+                />
+
+            </div>
+
+            <button
+                class="betting"
+                onclick={(_) => {
+                    if($balance < amount) {
+                        return;
+                    }
+                    $balance = $balance - amount;
+                    crash.bet(amount);
+                    hasBet = true;
+                    }}
+                disabled={hasBet || gameOngoing}>Submit bet</button
+            >
+            <button
+                class="betting"
+                onclick={(_) => {
+                    let result = crash.cashOut()
+                    if(!result) {
+                        console.error("Cashout precondition failed");
+                        return
+                    }
+                    $balance = $balance + result;
+                    hasCashout = true;
+                    
+                }}
+                disabled={isCrashed || !hasBet || hasCashout}>Cashout</button
+            >
         </div>
 
-        <div class="group">
-            <Icon
-                icon="ic:baseline-euro"
-                class="euro-icon"
-                style="position: absolute; left: 1rem; width: 1.25rem; height: 1.25rem; color: #ff4081; pointer-events: none;"
-            />
-            <input
-                class="input"
-                type="number"
-                placeholder="Your bet"
-                max={$balance}
-                bind:value={amount}
-            />
+        <p style="color: black;">Crash history</p>
+        <div class="latest">
+            {#each $history as amount}
+                <div class={`box ${amount > 2 ? "green" : amount > 1.5 ? "yellow" : "gray"}`}>
+                    <p>{amount}x</p>
+                </div>
+            {/each}
         </div>
 
-        <button
-            class="betting"
-            onclick={(_) => crash.bet(amount)}
-            disabled={!hasBet}>Submit bet</button
-        >
-        <button
-            class="betting"
-            onclick={(_) => crash.cashOut()}
-            disabled={isCrashed}>Cashout</button
-        >
     </div>
 
     <div id="game">
         {#if isCrashed}
-            <h1 id="crash">oops! crashed at {crashedAt}x</h1>
-            <p>Next game will start: {nextGameStartTime}</p>
+            <h1 id="crash">Crashed at {crashedAt}x</h1>
         {:else}
-            <h1 id="value">{currentValue}x</h1>
+            <h1><NumberFlow value={currentValue}/>x</h1> 
         {/if}
     </div>
 </div>
@@ -201,6 +235,14 @@
     .input::placeholder {
         color: #94a3b8;
     }
+    .lower {
+        margin-bottom: 4em;
+    }
+
+    .lower button {
+        margin-top: 2em;
+        width: 100%;
+    }
 
     .input:focus,
     input:hover {
@@ -241,21 +283,18 @@
     }
 
     #message-box {
-        position: absolute;
-        top: 0;
         margin-top: 1em;
+        margin-bottom: auto;
         background-color: #37aee2;
         border-radius: 0.5rem;
-        width: 250px;
+        width: 80%;
         height: 100px;
         display: flex;
+        flex-direction: column;
+        padding: 0.5em;
         align-items: center;
         justify-content: center;
         text-align: center;
-    }
-
-    #message {
-        font-size: 18px;
     }
 
     #game {
@@ -283,7 +322,8 @@
     .latest {
         display: flex;
         flex-direction: row;
-        margin-left: 100px;
+        width: 100%;
+        height: auto;
     }
 
     .box {
