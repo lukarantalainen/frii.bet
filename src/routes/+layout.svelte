@@ -1,22 +1,17 @@
 <script lang="ts">
 import { page } from '$app/stores';
 import Icon from '@iconify/svelte';
+import { balance } from '$lib/store';
+  import { browser } from '$app/environment';
+
 </script>
 
+<div id="margin"></div>
 <nav id=nav-left>
-
-
   <div >
     <a href="/Crash" class:selected={$page.url.pathname === '/Crash'}>
       <Icon icon="proicons:graph" style="width: 70px; height:70px;" />
       <span class="nav-label">Crash</span>
-    </a>
-  </div>
-
-  <div >
-    <a href="/Dice" class:selected={$page.url.pathname === '/Dice'}>
-      <Icon icon="ic:twotone-casino" style="width: 70px; height:70px;" />
-      <span class="nav-label">Dice</span>
     </a>
   </div>
 </nav>
@@ -28,9 +23,11 @@ import Icon from '@iconify/svelte';
     </a>
   </div>
   
-  <div>
-      <a href="signin">Sign in</a>
-  </div>
+
+    {#if browser}
+      <p>Balance $: <input type="number" bind:value={$balance}> </p>
+    {/if}
+
   
 </nav>
 

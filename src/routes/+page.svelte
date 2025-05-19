@@ -24,7 +24,8 @@
 <style>
 
     #container {
-        padding-top: 2em;
+        padding-top: 80px;
+        margin-left: 60px;
     }
 
     #frame {

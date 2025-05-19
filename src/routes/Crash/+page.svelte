@@ -12,6 +12,7 @@
 
         let isCrashed: boolean = $state(false)
         let nextGameStartTime: Date = $state(new Date());
+        let amount: number = $state(0);
 
 
         // suorittaa kun peli alkaa
@@ -74,8 +75,11 @@
     {#if isCrashed} 
         <h1>oops! crashed at {crashedAt}x</h1>
         <p>Next game will start: {nextGameStartTime}</p>
+        <input placeholder="Bet amount" bind:value={amount}>
+        <button on:click={_ => crash.bet(amount)}></button>
     {:else}
         <h1 id=value>{currentValue}x</h1>
+        <button on:click={_ => crash.cashOut()}>Cashout</button>
     {/if}
    
 </div>
@@ -86,7 +90,7 @@
     display: flex; 
     flex-direction: column;
     height: 80vh;
-    width: 100vw;
+    width: 80vw;
     margin-left: 100px;
     margin-top: 100px;
     background-color: black;

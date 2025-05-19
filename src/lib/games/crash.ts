@@ -19,6 +19,8 @@ export class Crash {
     currentMultiplier: number = 1.0;
     willCrashAt: number = Math.random() * 4
     nextDate: Date = new Date();
+    inProgress: boolean = false;
+    betAmount: number = 0;
 
     intervalId: number = 0;
 
@@ -38,18 +40,36 @@ export class Crash {
         this.currentMultiplier = 1.0;
         this.willCrashAt = Math.random() * 4
         this.onStart();
+        this.inProgress = true;
 
         this.intervalId = setInterval(() => { this.gameLoop() }, 300)
 
         this.gameLoop()
     }
 
+    bet(amount: number): boolean {
+        if(!this.inProgress) {
+            this.betAmount = amount
+        }
+        return !this.inProgress  
+    }
+
+    cashOut(): boolean | number {
+        if(!this.inProgress) {
+            return false;
+        } else {
+            return this.betAmount * this.currentMultiplier;
+        }
+    }
+
     private gameLoop() {
         this.currentMultiplier += Math.random() / 20;
         if (this.currentMultiplier > this.willCrashAt) {
             this.crashed = true;
+            this.inProgress = false;
             this.nextDate.setSeconds(new Date().getSeconds() + 8) // uusi peli alkaa 8s päästä
             this.onEnd(this.willCrashAt, this.nextDate);
+            this.betAmount = 0;
             
             setTimeout(()=>{this.start()}, 8000);
 
