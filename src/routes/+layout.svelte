@@ -9,7 +9,6 @@
     unconfirmedBal = Math.round($balance*100)/100;
   })
 </script> 
-
 <div id="margin"></div>
 <nav id="nav-left">
   <div>
@@ -100,10 +99,17 @@
     background-color: #36c6ff;
     position: relative;
     margin: 0;
+    margin-top: 100px;
   }
 
   .selector {
     display: flex;
     align-items: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    #nav-left {
+      display: none;
+    }
   }
 </style>

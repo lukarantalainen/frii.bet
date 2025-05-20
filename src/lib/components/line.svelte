@@ -16,11 +16,10 @@
 
 <style>
     .outer {
-        width: 20vw;
-        margin: 10%;
+        width: 80%;
     }
     .line {
-        background-color: white;
+        background-image: linear-gradient(90deg, #37aee2 0%, white 60%);
         height: 1em;
         border-radius: 4px;
         width: 0%;

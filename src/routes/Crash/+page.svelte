@@ -167,29 +167,28 @@
 </div>
 
 <style>
+    #container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 8px;
+        margin: 0 8px 0 100px;
+        height: 90vh;
+    }
+    
     .game {
         display: flex;
         flex-direction: column;
         height: 80vh;
         width: 80vw;
-        margin-left: 100px;
-        margin-top: 100px;
         background-color: black;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
 
     .balance {
         color: black;
-    }
-
-    #container {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 8px;
-        margin: 100px 8px 0 100px;
-        height: 90vh;
     }
 
     .input-column {
@@ -307,11 +306,12 @@
         border-radius: 10px;
     }
 
-    @media screen and (max-width: 990px) {
+    @media screen and (max-width: 600px) {
         #container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             justify-content: space-between;
+            margin-left: 8px;
         }
     }
 
