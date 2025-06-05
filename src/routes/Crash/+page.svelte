@@ -178,7 +178,7 @@
     .game {
         display: flex;
         flex-direction: column;
-        height: 70vh;
+        height: 80vh;
         width: 80vw;
         background-color: black;
         display: flex;
@@ -313,6 +313,11 @@
             justify-content: space-between;
             margin-left: 8px;
         }
+
+        .input-column {
+            padding: 1rem;
+        }
+
     }
 
     .game {
