@@ -172,13 +172,13 @@
         grid-template-columns: 300px 1fr;
         gap: 8px;
         margin: 0 8px 0 100px;
-        height: 90vh;
+        height: 80vh;
     }
     
     .game {
         display: flex;
         flex-direction: column;
-        height: 80vh;
+        height: 70vh;
         width: 80vw;
         background-color: black;
         display: flex;

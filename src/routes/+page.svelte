@@ -30,7 +30,7 @@
 </div>
 <style>
 #frame {
-    margin: 0 8vw 30px;
+    margin: 0 100px 30px;
 }
 
 h1 {
@@ -70,11 +70,6 @@ display: flex;
     font-size: 30px;
 }
 
-#games p {
-    margin-top: 0;
-    margin-right: 50px;
-}
-
 .game1 {
     background-image: url("dice-background.png");
     background-repeat: no-repeat;
@@ -94,6 +89,9 @@ display: flex;
 display: grid;
 grid-template-columns: 1fr 1fr;
 justify-content: space-between;
+}
+#frame  {
+    margin: 0 20px 0;
 }
 }
 
